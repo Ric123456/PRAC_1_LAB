@@ -1,0 +1,50 @@
+@model demomvc.Models.Producto
+
+@{
+    ViewData["Title"] = "Producto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="text-center">
+    <h1 class="display-4">Datos del Producto</h1>
+
+
+    <form asp-controller="Producto" asp-action="Edit">
+    <label asp-for="Nombre" class="control-label"></label>
+    <input asp-for="Nombre" class="form-control" type="text" placeholder="Nombre del Producto"/>
+
+    <br>
+    <div class="form-group">
+        <label asp-for="Categoria" class="control-label">Categoria</label>
+        <select asp-for="Categoria">
+             <option value="Accion">Acción</option>
+            <option value="RPG">RPG</option>
+            <option value="Deportes">Deportes</option>
+            <option value="Aventura">Aventura</option>
+            <option value="terror">terror</option>
+            <option value="Musical">Musical</option>
+            <option value="Militar">Militar</option>
+            <option value="auttos">auttos</option>
+        </select>
+     </div>
+
+    <label asp-for="Precio" class="control-label"></label>
+    <input asp-for="Precio" class="form-control" />
+
+    <label asp-for="Descuento" class="control-label"></label>
+    <input asp-for="Descuento" class="form-control" />
+
+    <br>
+    <div class="form-group">
+        <button type="submit" class="btn btn-warning">Actualizar</button>
+    </div>
+
+
+    </form>
+    <h1>@ViewData["Message"]</h1>
+     <div>
+        <a asp-action="Index">Ir a la Lista</a>
+    </div>
+</div>
